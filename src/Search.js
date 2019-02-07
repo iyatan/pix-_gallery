@@ -41,18 +41,32 @@ class Search extends Component {
   }
   images() {
     return this.state.images.map(image => {
-      return <img alt="No Pic:(" src={image.urls.thumb} />;
+      return <img key={image.id} alt="No Pic:(" src={image.urls.regular} />;
     });
   }
 
   render() {
     return (
       <div>
-        <input type="text" onChange={this.trackQueryValue} />
-        <button type="submit" onClick={this.fetchData}>
-          nnn
-        </button>
-        <div>{this.images()}</div>
+        <div className="App">
+          <div className="Wrap">
+            <div className="search">
+              <input
+                onChange={this.trackQueryValue}
+                className="searchBar"
+                placeholder="type your search"
+                onKeyPress={this.trackQueryValue}
+              />
+              <input
+                onClick={this.fetchData}
+                type="submit"
+                className="button"
+                name="searchB"
+              />
+            </div>
+          </div>
+          <div className="searchRes">{this.images()}</div>
+        </div>
       </div>
     );
   }
