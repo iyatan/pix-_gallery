@@ -16,6 +16,12 @@ class Search extends Component {
     this.trackQueryValue = this.trackQueryValue.bind(this);
     this.fetchData = this.fetchData.bind(this);
   }
+  _handleKeyPress = e => {
+    if (e.key === "Enter") {
+      this.trackQueryValue(e);
+      console.log(e);
+    }
+  };
 
   componentDidMount() {
     this.fetchData();
@@ -41,7 +47,12 @@ class Search extends Component {
   }
   images() {
     return this.state.images.map(image => {
-      return <img key={image.id} alt="No Pic:(" src={image.urls.regular} />;
+      return (
+        <div>
+          {" "}
+          <img key={image.id} alt="No Pic:(" src={image.urls.thumb} />
+        </div>
+      );
     });
   }
 
@@ -55,7 +66,7 @@ class Search extends Component {
                 onChange={this.trackQueryValue}
                 className="searchBar"
                 placeholder="type your search"
-                onKeyPress={this.trackQueryValue}
+                onKeyPress={this._handleKeyPress}
               />
               <input
                 onClick={this.fetchData}
@@ -65,7 +76,9 @@ class Search extends Component {
               />
             </div>
           </div>
-          <div className="searchRes">{this.images()}</div>
+          <div className="wrapper2">
+            <div className="searchRes">{this.images()}</div>
+          </div>
         </div>
       </div>
     );
