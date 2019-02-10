@@ -1,50 +1,51 @@
 body {
   background-color: #61646d;
-  display: flex;
   background-image: url(https://images.unsplash.com/photo-1544980888-a57770fe09e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.App {
+  text-align: center;
+}
+
+.searchRes {
+  margin-top: 20vh;
+  border-color: pink;
 }
 .search {
   width: 100%;
   position: relative;
 }
-.searchBar {
-  float: left;
-  width: 100%;
-  border: 3px solid #00b4cc;
-  padding: 7px;
-  height: 5vh;
-  border-radius: 5px;
-  outline: none;
-  color: #9dbfaf;
-}
-.button {
-  position: absolute;
-  right: -50px;
-  width: 8vw;
-  height: 7.8vh;
-  border: 2px solid #00b4cc;
-  background: #00b4cc;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px;
-}
-.Wrap {
-  width: 30%;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.searchRes {
-  margin-top: 20vh;
-  border-color: pink;
-}
+
 img {
-  border-radius: 5%;
-  padding: 1em;
+  border-radius: 0.7em;
+  padding: 2em;
+  margin: 1em;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.downloadB {
+  transition: all 0.5s ease;
+  color: #fff;
+  border: 3px solid white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+  width: 100px;
   z-index: 3;
+  margin-left: 50%;
+  cursor: copy;
+}
+.downloadB:hover {
+  color: #001f3f;
+  background-color: #fff;
 }

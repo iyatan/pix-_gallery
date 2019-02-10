@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Download from "./Download";
 import "./App.css";
 
 const clientId =
@@ -18,8 +19,7 @@ class Search extends Component {
   }
   _handleKeyPress = e => {
     if (e.key === "Enter") {
-      this.trackQueryValue(e);
-      console.log(e);
+      this.fetchData();
     }
   };
 
@@ -50,7 +50,8 @@ class Search extends Component {
       return (
         <div>
           {" "}
-          <img key={image.id} alt="No Pic:(" src={image.urls.thumb} />
+          <img key={image.id} alt="No Pic:(" src={image.urls.regular} />
+          <Download />
         </div>
       );
     });
