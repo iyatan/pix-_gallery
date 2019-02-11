@@ -3,7 +3,11 @@ import "./App.css";
 
 class Download extends Component {
   render() {
-    return <div className="downloadB">Download</div>;
+    return (
+      <div className="downloadB">
+        <a href={this.props.image.links.download + "?force=true"}>Download</a>
+      </div>
+    );
   }
 }
 

@@ -48,10 +48,10 @@ class Search extends Component {
   images() {
     return this.state.images.map(image => {
       return (
-        <div>
+        <div key={image.id}>
           {" "}
-          <img key={image.id} alt="No Pic:(" src={image.urls.regular} />
-          <Download />
+          <img alt="No Pic:(" src={image.urls.regular} />
+          <Download image={image} />
         </div>
       );
     });
@@ -72,10 +72,12 @@ class Search extends Component {
               <input
                 onClick={this.fetchData}
                 type="submit"
-                className="button"
+                className="buttonS"
                 name="searchB"
+                value="Search"
               />
             </div>
+            <p>Search And Download All Sorts of Images</p>
           </div>
           <div className="wrapper2">
             <div className="searchRes">{this.images()}</div>
