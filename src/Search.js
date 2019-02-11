@@ -33,7 +33,6 @@ class Search extends Component {
         return response.json();
       })
       .then(jsonResponse => {
-        console.log(jsonResponse);
         this.setState({
           images: jsonResponse.results
         });
